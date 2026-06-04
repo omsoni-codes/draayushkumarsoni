@@ -1,0 +1,55 @@
+import { Quote } from "lucide-react";
+
+const testimonials = [
+  {
+    quote:
+      "Six months after my knee replacement I'm back to my morning walks pain-free. Dr. Soni explained every step and his team was wonderful.",
+    name: "Mrs. Sharma",
+    detail: "Total Knee Replacement",
+  },
+  {
+    quote:
+      "Tore my ACL playing cricket. The arthroscopic surgery and rehab plan got me back on the pitch within five months.",
+    name: "Rohan M.",
+    detail: "ACL Reconstruction",
+  },
+  {
+    quote:
+      "Honest, patient and never rushed. He suggested non-surgical treatment first and it worked. Truly grateful.",
+    name: "Mr. Verma",
+    detail: "Frozen Shoulder",
+  },
+];
+
+export function Testimonials() {
+  return (
+    <section id="testimonials" className="bg-surface py-20 lg:py-28">
+      <div className="container-x">
+        <div className="max-w-2xl">
+          <span className="eyebrow">Patient stories</span>
+          <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
+            Trusted by people who needed to move again.
+          </h2>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {testimonials.map((t) => (
+            <figure
+              key={t.name}
+              className="relative flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft"
+            >
+              <Quote className="h-7 w-7 text-accent/70" />
+              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground">
+                "{t.quote}"
+              </blockquote>
+              <figcaption className="mt-6 border-t border-border pt-4">
+                <p className="font-display text-sm font-semibold text-primary">{t.name}</p>
+                <p className="text-xs text-muted-foreground">{t.detail}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
