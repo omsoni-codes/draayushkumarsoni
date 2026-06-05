@@ -1,18 +1,48 @@
 import { Calendar, Clock, Phone } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 export function Booking() {
   const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const fd = new FormData(form);
+    const name = String(fd.get("name") ?? "").trim();
+    const phone = String(fd.get("phone") ?? "").trim();
+    const dateStr = String(fd.get("date") ?? "").trim();
+    const message = String(fd.get("message") ?? "").trim();
+
+    if (!name || name.length > 100) {
+      toast.error("Please enter a valid name.");
+      return;
+    }
+    if (!phone || phone.length < 5 || phone.length > 30) {
+      toast.error("Please enter a valid phone number.");
+      return;
+    }
+    if (message.length > 2000) {
+      toast.error("Message is too long.");
+      return;
+    }
+
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-      toast.success("Request received. We'll call you back shortly.");
-    }, 700);
+    const { error } = await supabase.from("appointments").insert({
+      name,
+      phone,
+      preferred_date: dateStr || null,
+      message: message || null,
+    });
+    setSubmitting(false);
+
+    if (error) {
+      toast.error("Could not send request. Please call +91 86024 20313.");
+      return;
+    }
+    form.reset();
+    toast.success("Request received. We'll call you back shortly.");
   };
 
   return (
