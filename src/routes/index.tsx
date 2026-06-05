@@ -14,20 +14,19 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dr. Aayush Soni — Orthopaedic & Joint Replacement Surgeon" },
+      { title: "Dr. Aayush Soni — Orthopaedic Surgeon, Bhopal | Lakshya Hospital" },
       {
         name: "description",
         content:
-          "Dr. Aayush Soni is a consultant orthopaedic surgeon specialising in joint replacement, arthroscopy and sports injuries. Book a consultation today.",
+          "Dr. Aayush Soni (MBBS, MS Ortho) — consultant orthopaedic surgeon at Lakshya Multispeciality Hospital, Kolar Road, Bhopal. Trauma, joint replacement, arthroscopy, spine. Call +91 86024 20313.",
       },
-      { property: "og:title", content: "Dr. Aayush Soni — Orthopaedic Surgeon" },
+      { property: "og:title", content: "Dr. Aayush Soni — Orthopaedic Surgeon, Bhopal" },
       {
         property: "og:description",
         content:
-          "Expert orthopaedic care for joint pain, sports injuries and fractures. Modern minimally invasive techniques.",
+          "Expert orthopaedic care in Bhopal — trauma, joint replacement, arthroscopy, spine and paediatric orthopaedics. 24×7 emergency.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -38,7 +37,17 @@ export const Route = createFileRoute("/")({
           "@type": "Physician",
           name: "Dr. Aayush Soni",
           medicalSpecialty: "Orthopedic",
-          url: "/",
+          telephone: "+91-8602420313",
+          email: "aayushkumarsoni95@gmail.com",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Lakshya Multispeciality Hospital, Danish Kunj, Kolar Road",
+            addressLocality: "Bhopal",
+            postalCode: "462042",
+            addressRegion: "MP",
+            addressCountry: "IN",
+          },
+          openingHours: "Mo-Su 09:00-16:00",
         }),
       },
     ],

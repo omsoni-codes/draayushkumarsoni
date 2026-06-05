@@ -10,7 +10,7 @@ export function Contact() {
             Find us & get in touch.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Walk-ins welcome by appointment. Parking available on site.
+            Walk-ins welcome by appointment. 24×7 emergency care available.
           </p>
 
           <ul className="mt-8 space-y-5">
@@ -21,10 +21,18 @@ export function Contact() {
               <div>
                 <p className="font-display text-sm font-semibold text-primary">Clinic address</p>
                 <p className="text-sm text-muted-foreground">
-                  Soni Orthopaedic Clinic<br />
-                  123 Health Avenue, City Centre<br />
-                  PIN — 000000
+                  Lakshya Multispeciality Hospital<br />
+                  Danish Kunj, Kolar Road<br />
+                  Bhopal — 462042, Madhya Pradesh
                 </p>
+                <a
+                  href="https://maps.app.goo.gl/UZjmUjTC1wG4FSeN7?g_st=ac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block text-xs font-semibold text-accent hover:underline"
+                >
+                  Open in Google Maps →
+                </a>
               </div>
             </li>
             <li className="flex items-start gap-4">
@@ -33,8 +41,8 @@ export function Contact() {
               </span>
               <div>
                 <p className="font-display text-sm font-semibold text-primary">Phone</p>
-                <a href="tel:+910000000000" className="text-sm text-muted-foreground hover:text-accent">
-                  +91 00000 00000
+                <a href="tel:+918602420313" className="text-sm text-muted-foreground hover:text-accent">
+                  +91 86024 20313
                 </a>
               </div>
             </li>
@@ -44,8 +52,8 @@ export function Contact() {
               </span>
               <div>
                 <p className="font-display text-sm font-semibold text-primary">Email</p>
-                <a href="mailto:care@draayushsoni.com" className="text-sm text-muted-foreground hover:text-accent">
-                  care@draayushsoni.com
+                <a href="mailto:aayushkumarsoni95@gmail.com" className="text-sm text-muted-foreground hover:text-accent">
+                  aayushkumarsoni95@gmail.com
                 </a>
               </div>
             </li>
@@ -54,10 +62,10 @@ export function Contact() {
                 <Clock className="h-5 w-5" />
               </span>
               <div>
-                <p className="font-display text-sm font-semibold text-primary">Hours</p>
+                <p className="font-display text-sm font-semibold text-primary">Consulting hours</p>
                 <p className="text-sm text-muted-foreground">
-                  Mon – Sat: 10:00 AM – 7:00 PM<br />
-                  Sunday: Closed
+                  Every day · 9:00 AM – 4:00 PM<br />
+                  24×7 emergency visits available
                 </p>
               </div>
             </li>
@@ -66,8 +74,8 @@ export function Contact() {
 
         <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
           <iframe
-            title="Clinic location"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=72.8200%2C19.0700%2C72.8800%2C19.1100&layer=mapnik"
+            title="Lakshya Multispeciality Hospital, Bhopal"
+            src="https://www.google.com/maps?q=Lakshya+Multispeciality+Hospital+Danish+Kunj+Kolar+Road+Bhopal&output=embed"
             className="h-[460px] w-full"
             loading="lazy"
           />

@@ -33,16 +33,16 @@ export function Booking() {
               <ul className="mt-8 space-y-4 text-sm">
                 <li className="flex items-center gap-3">
                   <Calendar className="h-5 w-5 text-accent" />
-                  <span>Mon – Sat · By appointment</span>
+                  <span>Open every day · By appointment</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Clock className="h-5 w-5 text-accent" />
-                  <span>10:00 AM – 7:00 PM</span>
+                  <span>9:00 AM – 4:00 PM · 24×7 emergency</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-accent" />
-                  <a href="tel:+910000000000" className="hover:underline">
-                    +91 00000 00000
+                  <a href="tel:+918602420313" className="hover:underline">
+                    +91 86024 20313
                   </a>
                 </li>
               </ul>

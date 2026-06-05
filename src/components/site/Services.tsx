@@ -1,35 +1,35 @@
-import { Bone, Activity, Zap, HeartPulse, Syringe, Footprints } from "lucide-react";
+import { Bone, Activity, HeartPulse, Spline, Baby, Microscope, Zap } from "lucide-react";
 
 const services = [
   {
+    icon: HeartPulse,
+    title: "Trauma & Complex Trauma",
+    body: "Emergency and reconstructive care for fractures, polytrauma and post-injury deformities — 24×7 availability.",
+  },
+  {
     icon: Bone,
     title: "Joint Replacement",
-    body: "Total and partial knee, hip and shoulder replacements using modern implants and minimally invasive techniques.",
+    body: "Total and partial hip & knee arthroplasty using modern implants and minimally invasive techniques.",
   },
   {
     icon: Activity,
-    title: "Arthroscopy",
-    body: "Keyhole surgery for knee, shoulder and ankle — ACL reconstruction, meniscus repair and rotator cuff procedures.",
+    title: "Arthroscopic Surgery",
+    body: "Keyhole surgery of the knee and shoulder — ACL reconstruction, meniscus repair, rotator cuff and labral procedures.",
   },
   {
-    icon: Zap,
-    title: "Sports Injuries",
-    body: "Evidence-based care for ligament tears, cartilage damage and overuse injuries with return-to-play protocols.",
+    icon: Spline,
+    title: "Spine Surgery & Back Pain",
+    body: "Evaluation and surgical management of disc prolapse, sciatica, spinal stenosis and chronic back pain.",
   },
   {
-    icon: HeartPulse,
-    title: "Trauma & Fractures",
-    body: "Fracture fixation, complex trauma and post-injury reconstruction for adults and the elderly.",
+    icon: Microscope,
+    title: "Orthopaedic Oncology",
+    body: "Diagnosis and surgical management of bone & soft-tissue tumours, including limb-salvage procedures.",
   },
   {
-    icon: Syringe,
-    title: "Regenerative Therapy",
-    body: "PRP, viscosupplementation and image-guided injections for early arthritis and tendon problems.",
-  },
-  {
-    icon: Footprints,
-    title: "Spine & Posture",
-    body: "Non-surgical management of back pain, sciatica and posture-related musculoskeletal conditions.",
+    icon: Baby,
+    title: "Paediatric Orthopaedics",
+    body: "Care for congenital and developmental conditions, growth-plate fractures and paediatric deformities.",
   },
 ];
 

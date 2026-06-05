@@ -2,9 +2,9 @@ import { GraduationCap, Award, Stethoscope, Users } from "lucide-react";
 
 const credentials = [
   { icon: GraduationCap, label: "MBBS, MS Orthopaedics" },
-  { icon: Award, label: "Fellowship in Joint Replacement" },
-  { icon: Stethoscope, label: "Fellowship in Arthroscopy & Sports Medicine" },
-  { icon: Users, label: "Member, Indian Orthopaedic Association" },
+  { icon: Award, label: "Assistant Professor, RKMC Bhopal" },
+  { icon: Stethoscope, label: "Ex-Resident, AIIMS Bhopal" },
+  { icon: Users, label: "1,000+ surgeries performed" },
 ];
 
 export function About() {
@@ -19,15 +19,17 @@ export function About() {
         </div>
         <div className="lg:col-span-7">
           <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Dr. Aayush Soni brings a patient-first approach to orthopaedic care.
-            With training across leading institutions in India and abroad, he
-            specialises in minimally invasive joint replacement, arthroscopic
-            surgery and complex trauma reconstruction.
+            Dr. Aayush Soni (MBBS, MS Orthopaedics) is a consultant orthopaedic
+            surgeon based in Bhopal with over 6 years of clinical and surgical
+            experience. He currently practices at Lakshya Multispeciality
+            Hospital, Kolar Road and serves as Assistant Professor at RKMC
+            Bhopal.
           </p>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            His practice is built on three principles — accurate diagnosis,
-            honest counselling, and recovery plans tailored to how you live and
-            move.
+            His training spans premier institutions including AIIMS Bhopal,
+            Sri Aurobindo Medical College Indore, ABVGMC Vidisha and Bansal
+            Hospital — covering trauma, joint replacement, arthroscopy, spine,
+            paediatric and orthopaedic oncology care.
           </p>
 
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
