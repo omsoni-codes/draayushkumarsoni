@@ -1,4 +1,6 @@
 import { Bone, Activity, HeartPulse, Spline, Baby, Microscope, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+
 
 const services = [
   {
@@ -45,21 +47,31 @@ export function Services() {
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ icon: Icon, title, body }) => (
-            <article
+          {services.map(({ icon: Icon, title, body }, i) => (
+            <motion.article
               key={title}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-soft"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-colors hover:border-accent/40 hover:shadow-soft"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground transition-colors group-hover:bg-accent">
+              <span className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <motion.span
+                whileHover={{ rotate: -8, scale: 1.08 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground transition-colors group-hover:bg-accent"
+              >
                 <Icon className="h-5 w-5" />
-              </span>
+              </motion.span>
               <h3 className="mt-5 font-display text-lg font-semibold text-primary">
                 {title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {body}
               </p>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

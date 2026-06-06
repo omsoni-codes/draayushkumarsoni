@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -33,10 +34,15 @@ export function Testimonials() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure
+          {testimonials.map((t, i) => (
+            <motion.figure
               key={t.name}
-              className="relative flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -4, scale: 1.01 }}
+              className="relative flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft transition-colors hover:border-accent/40"
             >
               <Quote className="h-7 w-7 text-accent/70" />
               <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground">
@@ -46,7 +52,7 @@ export function Testimonials() {
                 <p className="font-display text-sm font-semibold text-primary">{t.name}</p>
                 <p className="text-xs text-muted-foreground">{t.detail}</p>
               </figcaption>
-            </figure>
+            </motion.figure>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import surgery from "@/assets/surgery-1.jpg.asset.json";
+import { motion } from "framer-motion";
 
 const timeline = [
   { year: "Present", title: "Assistant Professor, Orthopaedics", place: "RKMC, Bhopal" },
@@ -35,8 +36,21 @@ export function Experience() {
 
           <ol className="mt-8 space-y-5 border-l-2 border-border pl-6">
             {timeline.map((t, i) => (
-              <li key={i} className="relative">
-                <span className="absolute -left-[1.85rem] top-1.5 h-3 w-3 rounded-full bg-accent ring-4 ring-background" />
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="relative"
+              >
+                <motion.span
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 + 0.2, type: "spring" }}
+                  className="absolute -left-[1.85rem] top-1.5 h-3 w-3 rounded-full bg-accent ring-4 ring-background"
+                />
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent">
                   {t.year}
                 </p>
@@ -44,7 +58,7 @@ export function Experience() {
                   {t.title}
                 </p>
                 <p className="text-sm text-muted-foreground">{t.place}</p>
-              </li>
+              </motion.li>
             ))}
           </ol>
         </div>
