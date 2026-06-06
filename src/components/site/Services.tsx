@@ -53,7 +53,7 @@ export function Services() {
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: "easeOut" }}
               whileHover={{ y: -6 }}
               className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-colors hover:border-accent/40 hover:shadow-soft"
             >
