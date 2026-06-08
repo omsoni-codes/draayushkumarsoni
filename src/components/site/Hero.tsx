@@ -1,9 +1,9 @@
 import { ArrowRight, ShieldCheck, Star } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import portrait from "@/assets/dr-aayush.jpg.asset.json";
 import { Counter } from "./Counter";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: (i: number = 0) => ({
     opacity: 1,
