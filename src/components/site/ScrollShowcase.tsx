@@ -118,22 +118,7 @@ export function ScrollShowcase() {
           <span className="eyebrow !text-accent">Inside the practice</span>
           <div className="hidden items-center gap-2 sm:flex">
             {scenes.map((_, i) => (
-              <span
-                key={i}
-                className="h-1 w-8 overflow-hidden rounded-full bg-primary-foreground/15"
-              >
-                <motion.span
-                  className="block h-full bg-accent"
-                  style={{
-                    scaleX: useTransform(
-                      smooth,
-                      [i / scenes.length, (i + 1) / scenes.length],
-                      [0, 1],
-                    ),
-                    transformOrigin: "0% 50%",
-                  }}
-                />
-              </span>
+              <ProgressPip key={i} index={i} total={scenes.length} progress={smooth} />
             ))}
           </div>
         </div>
