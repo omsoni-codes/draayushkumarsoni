@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { href: "#about", label: "About" },
@@ -12,25 +13,42 @@ const links = [
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <div className="container-x flex h-16 items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-primary font-display text-sm font-bold text-primary-foreground">
+    <motion.header
+      initial={{ y: -24, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "glass border-b border-border/60"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <div className="container-x flex h-14 items-center justify-between">
+        <a href="#top" className="flex items-center gap-2.5">
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-primary font-display text-xs font-semibold text-primary-foreground">
             AS
           </span>
-          <span className="font-display text-sm font-semibold text-primary">
+          <span className="font-display text-[15px] font-semibold tracking-tight text-primary">
             Dr. Aayush Soni
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="text-[13px] font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               {l.label}
             </a>
@@ -39,45 +57,54 @@ export function Nav() {
 
         <a
           href="#book"
-          className="hidden items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.02] md:inline-flex"
+          className="hidden items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-[13px] font-medium text-primary-foreground transition-transform hover:scale-[1.03] md:inline-flex"
         >
-          <Phone className="h-4 w-4" />
-          Book Appointment
+          Book
         </a>
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-md text-primary md:hidden"
+          className="grid h-9 w-9 place-items-center rounded-full text-primary md:hidden"
           aria-label="Toggle menu"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      {open && (
-        <div className="border-t border-border bg-background md:hidden">
-          <div className="container-x flex flex-col gap-1 py-3">
-            {links.map((l) => (
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-border glass md:hidden"
+          >
+            <div className="container-x flex flex-col gap-1 py-4">
+              {links.map((l, i) => (
+                <motion.a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.04 }}
+                  className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground hover:bg-muted"
+                >
+                  {l.label}
+                </motion.a>
+              ))}
               <a
-                key={l.href}
-                href={l.href}
+                href="#book"
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted"
+                className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground"
               >
-                {l.label}
+                Book Appointment
               </a>
-            ))}
-            <a
-              href="#book"
-              onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground"
-            >
-              <Phone className="h-4 w-4" />
-              Book Appointment
-            </a>
-          </div>
-        </div>
-      )}
-    </header>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }
