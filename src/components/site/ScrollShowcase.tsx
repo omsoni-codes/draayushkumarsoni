@@ -87,6 +87,26 @@ function Scene({
   );
 }
 
+function ProgressPip({
+  index,
+  total,
+  progress,
+}: {
+  index: number;
+  total: number;
+  progress: MotionValue<number>;
+}) {
+  const scaleX = useTransform(progress, [index / total, (index + 1) / total], [0, 1]);
+  return (
+    <span className="h-1 w-8 overflow-hidden rounded-full bg-primary-foreground/15">
+      <motion.span
+        className="block h-full bg-accent"
+        style={{ scaleX, transformOrigin: "0% 50%" }}
+      />
+    </span>
+  );
+}
+
 export function ScrollShowcase() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
