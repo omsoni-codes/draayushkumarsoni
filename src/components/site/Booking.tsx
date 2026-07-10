@@ -80,7 +80,7 @@ export function Booking() {
 
             <form
               onSubmit={onSubmit}
-              className="space-y-4 rounded-2xl bg-background p-6 text-foreground sm:p-8"
+              className="liquid-glass space-y-4 rounded-2xl bg-background/70 p-6 text-foreground sm:p-8"
             >
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">

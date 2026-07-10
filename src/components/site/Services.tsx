@@ -68,7 +68,7 @@ export function Services() {
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.7, delay: (i % 3) * 0.08, ease }}
               whileHover={{ y: -8 }}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-8 transition-all duration-500 hover:border-accent/40 hover:shadow-elegant"
+              className="liquid-glass group relative flex flex-col overflow-hidden rounded-3xl p-8 transition-all duration-500 hover:shadow-elegant"
             >
               <div
                 aria-hidden
