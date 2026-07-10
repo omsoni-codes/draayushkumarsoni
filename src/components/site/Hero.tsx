@@ -132,7 +132,7 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            custom={4}
+            custom={5}
             className="mt-6 flex flex-col items-center gap-3"
           >
             <span className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
@@ -140,6 +140,7 @@ export function Hero() {
             </span>
             <SocialLinks />
           </motion.div>
+
         </motion.div>
 
 
