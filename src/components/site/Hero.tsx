@@ -47,21 +47,38 @@ export function Hero() {
 
       <div className="container-x flex flex-col items-center pt-8 text-center">
         <motion.div style={{ y: textY, opacity: textOpacity }} className="flex flex-col items-center">
-          <motion.span
+          <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="show"
             custom={0}
-            className="eyebrow"
+            className="hue-glow"
+          >
+            <div className="liquid-glass inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold tracking-tight text-primary">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              </span>
+              Dr Aayush Soni
+            </div>
+          </motion.div>
+
+          <motion.span
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            custom={1}
+            className="eyebrow mt-8"
           >
             Orthopaedic Surgeon · Bhopal
           </motion.span>
+
 
           <motion.h1
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            custom={1}
+            custom={2}
             className="display-xl mt-6 max-w-5xl text-balance text-primary"
           >
             Movement is medicine.
@@ -75,7 +92,7 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            custom={2}
+            custom={3}
             className="mt-8 max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl"
           >
             Consultant orthopaedic surgeon at Lakshya Multispeciality Hospital —
@@ -86,9 +103,10 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            custom={3}
+            custom={4}
             className="mt-10 flex flex-wrap items-center justify-center gap-3"
           >
+
             <motion.a
               href="#book"
               whileHover={{ scale: 1.04 }}
@@ -114,7 +132,7 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            custom={4}
+            custom={5}
             className="mt-6 flex flex-col items-center gap-3"
           >
             <span className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
@@ -122,6 +140,7 @@ export function Hero() {
             </span>
             <SocialLinks />
           </motion.div>
+
         </motion.div>
 
 
