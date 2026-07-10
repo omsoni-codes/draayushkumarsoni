@@ -1,4 +1,6 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Link2 } from "lucide-react";
+import { SocialLinks } from "./SocialLinks";
+
 
 export function Contact() {
   return (
