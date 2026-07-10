@@ -214,24 +214,25 @@
 @utility hue-glow {
   position: relative;
   isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    z-index: -1;
+    border-radius: 9999px;
+    background: conic-gradient(
+      from 0deg,
+      var(--color-accent),
+      oklch(0.7 0.2 300),
+      oklch(0.7 0.2 180),
+      var(--color-accent)
+    );
+    filter: blur(28px);
+    opacity: 0.55;
+    animation: hue-rotate 12s linear infinite;
+  }
 }
 
-@utility hue-glow::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  z-index: -1;
-  border-radius: 9999px;
-  background: conic-gradient(
-    from 0deg,
-    var(--color-accent),
-    oklch(0.7 0.2 300),
-    oklch(0.7 0.2 180),
-    var(--color-accent)
-  );
-  filter: blur(28px);
-  opacity: 0.55;
-  animation: hue-rotate 12s linear infinite;
-}
 
 
