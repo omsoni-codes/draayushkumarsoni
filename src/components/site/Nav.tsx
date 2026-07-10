@@ -27,11 +27,12 @@ export function Nav() {
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-3 top-3 z-50 mx-auto max-w-6xl rounded-full transition-all duration-500 ${
         scrolled
-          ? "glass border-b border-border/60"
-          : "bg-transparent border-b border-transparent"
+          ? "liquid-glass"
+          : "border border-transparent bg-transparent"
       }`}
+
     >
       <div className="container-x flex h-14 items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
@@ -78,7 +79,7 @@ export function Nav() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-border glass md:hidden"
+            className="liquid-glass mt-2 overflow-hidden rounded-3xl md:hidden"
           >
             <div className="container-x flex flex-col gap-1 py-4">
               {links.map((l, i) => (

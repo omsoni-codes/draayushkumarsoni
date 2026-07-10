@@ -115,18 +115,19 @@ export function Hero() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.2, ease, delay: 0.4 }}
           style={{ y: imgY, scale: imgScale }}
-          className="relative mt-16 w-full max-w-3xl"
+          className="relative mt-16 w-full max-w-2xl"
         >
           <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-accent/25 via-transparent to-transparent blur-3xl" />
-          <div className="overflow-hidden rounded-[2rem] border border-border bg-surface shadow-elegant">
+          <div className="liquid-glass overflow-hidden rounded-[2rem] p-2">
             <img
               src={portrait.url}
               alt="Dr. Aayush Soni, orthopaedic surgeon"
               width={1024}
               height={1280}
-              className="aspect-[4/3] h-full w-full object-cover object-top sm:aspect-[16/10]"
+              className="aspect-[4/5] h-full w-full rounded-[1.6rem] object-cover object-[center_20%] sm:aspect-[5/6]"
             />
           </div>
+
         </motion.div>
 
         {/* Stats bar */}
