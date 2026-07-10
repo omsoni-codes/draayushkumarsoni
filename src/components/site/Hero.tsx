@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { useRef } from "react";
 import portrait from "@/assets/dr-aayush.jpg.asset.json";
 import { Counter } from "./Counter";
+import { SocialLinks } from "./SocialLinks";
+
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
