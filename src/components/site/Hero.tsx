@@ -109,7 +109,21 @@ export function Hero() {
               Learn more
             </motion.a>
           </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            custom={4}
+            className="mt-6 flex flex-col items-center gap-3"
+          >
+            <span className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+              Connect online
+            </span>
+            <SocialLinks />
+          </motion.div>
         </motion.div>
+
 
         {/* Parallax portrait */}
         <motion.div
