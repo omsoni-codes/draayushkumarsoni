@@ -71,7 +71,17 @@ export function Contact() {
                 </p>
               </div>
             </li>
+            <li className="flex items-start gap-4">
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
+                <Link2 className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="font-display text-sm font-semibold text-primary">Connect online</p>
+                <SocialLinks className="mt-2 flex-wrap" />
+              </div>
+            </li>
           </ul>
+
         </div>
 
         <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
