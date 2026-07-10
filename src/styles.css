@@ -166,7 +166,43 @@
 }
 
 @utility glass {
-  background: color-mix(in oklab, var(--color-background) 70%, transparent);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: color-mix(in oklab, var(--color-background) 55%, transparent);
+  backdrop-filter: saturate(200%) blur(28px);
+  box-shadow:
+    inset 0 1px 0 0 color-mix(in oklab, white 65%, transparent),
+    inset 0 -1px 0 0 color-mix(in oklab, var(--color-ink) 6%, transparent),
+    0 1px 0 0 color-mix(in oklab, var(--color-ink) 4%, transparent);
 }
+
+@utility liquid-glass {
+  position: relative;
+  background:
+    linear-gradient(135deg,
+      color-mix(in oklab, white 55%, transparent) 0%,
+      color-mix(in oklab, white 18%, transparent) 40%,
+      color-mix(in oklab, white 8%, transparent) 100%),
+    color-mix(in oklab, var(--color-background) 40%, transparent);
+  backdrop-filter: saturate(200%) blur(32px);
+  border: 1px solid color-mix(in oklab, white 45%, transparent);
+  box-shadow:
+    inset 0 1px 0 0 color-mix(in oklab, white 80%, transparent),
+    inset 0 -1px 0 0 color-mix(in oklab, var(--color-ink) 8%, transparent),
+    inset 0 0 0 1px color-mix(in oklab, white 10%, transparent),
+    0 20px 60px -20px color-mix(in oklab, var(--color-ink) 25%, transparent),
+    0 2px 6px -2px color-mix(in oklab, var(--color-ink) 10%, transparent);
+}
+
+@utility liquid-glass-dark {
+  background:
+    linear-gradient(135deg,
+      color-mix(in oklab, white 18%, transparent) 0%,
+      color-mix(in oklab, white 6%, transparent) 40%,
+      color-mix(in oklab, white 2%, transparent) 100%);
+  backdrop-filter: saturate(180%) blur(28px);
+  border: 1px solid color-mix(in oklab, white 18%, transparent);
+  box-shadow:
+    inset 0 1px 0 0 color-mix(in oklab, white 25%, transparent),
+    inset 0 -1px 0 0 color-mix(in oklab, black 30%, transparent),
+    0 20px 60px -20px color-mix(in oklab, black 60%, transparent);
+}
+
