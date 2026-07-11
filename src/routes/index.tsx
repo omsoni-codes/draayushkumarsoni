@@ -12,6 +12,9 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { Booking } from "@/components/site/Booking";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { SmoothScroll } from "@/components/site/SmoothScroll";
+import { ScrollProgress } from "@/components/site/ScrollProgress";
+import { CursorGlow } from "@/components/site/CursorGlow";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,6 +63,9 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background">
+      <SmoothScroll />
+      <ScrollProgress />
+      <CursorGlow />
       <Nav />
       <main>
         <Hero />
