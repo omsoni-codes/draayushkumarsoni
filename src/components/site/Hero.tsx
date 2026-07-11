@@ -1,19 +1,21 @@
 import { ArrowRight } from "lucide-react";
-import { motion, useScroll, useTransform, type Variants } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform, type Variants } from "framer-motion";
 import { useRef } from "react";
 import portrait from "@/assets/dr-aayush.jpg.asset.json";
 import { Counter } from "./Counter";
 import { SocialLinks } from "./SocialLinks";
+import { Magnetic } from "./Magnetic";
 
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 32, filter: "blur(10px)" },
   show: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.9, ease, delay: 0.15 + i * 0.08 },
+    filter: "blur(0px)",
+    transition: { duration: 1.1, ease, delay: 0.15 + i * 0.09 },
   }),
 };
 
@@ -24,10 +26,12 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const imgY = useTransform(scrollYProgress, [0, 1], [0, 140]);
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const springy = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.5 });
+  const imgY = useTransform(springy, [0, 1], [0, 180]);
+  const imgScale = useTransform(springy, [0, 1], [1, 1.1]);
+  const imgRotate = useTransform(springy, [0, 1], [0, -2]);
+  const textY = useTransform(springy, [0, 1], [0, -80]);
+  const textOpacity = useTransform(springy, [0, 0.7], [1, 0]);
 
   return (
     <section
@@ -107,25 +111,29 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center justify-center gap-3"
           >
 
-            <motion.a
-              href="#book"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-elegant"
-            >
-              Book a consultation
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </motion.a>
-            <motion.a
-              href="#about"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-sm font-medium text-primary hover:bg-surface"
-            >
-              Learn more
-            </motion.a>
+            <Magnetic>
+              <motion.a
+                href="#book"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-elegant"
+              >
+                Book a consultation
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </motion.a>
+            </Magnetic>
+            <Magnetic>
+              <motion.a
+                href="#about"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-sm font-medium text-primary hover:bg-surface"
+              >
+                Learn more
+              </motion.a>
+            </Magnetic>
           </motion.div>
 
           <motion.div
@@ -146,10 +154,10 @@ export function Hero() {
 
         {/* Parallax portrait */}
         <motion.div
-          initial={{ opacity: 0, y: 80, scale: 0.94 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1.2, ease, delay: 0.4 }}
-          style={{ y: imgY, scale: imgScale }}
+          initial={{ opacity: 0, y: 100, scale: 0.92, filter: "blur(14px)" }}
+          animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1.4, ease, delay: 0.4 }}
+          style={{ y: imgY, scale: imgScale, rotate: imgRotate }}
           className="relative mt-16 w-full max-w-2xl"
         >
           <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-accent/25 via-transparent to-transparent blur-3xl" />
