@@ -54,10 +54,10 @@ export function Hero() {
             custom={0}
             className="hue-glow"
           >
-            <div className="liquid-glass inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold tracking-tight text-primary">
-              <span className="relative flex h-2 w-2">
+            <div className="liquid-glass inline-flex items-center gap-3 rounded-full px-6 py-3 text-base font-semibold tracking-tight text-primary sm:text-lg">
+              <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
               </span>
               Dr Aayush Soni
             </div>
