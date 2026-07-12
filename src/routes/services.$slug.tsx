@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowLeft, Check, Phone } from "lucide-react";
-import { getService, services } from "@/lib/services-data";
+import { getService, services, type ServiceDetail } from "@/lib/services-data";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
@@ -97,7 +97,7 @@ function ServicePage() {
               Procedures offered
             </h2>
             <ul className="mt-6 space-y-3">
-              {service.procedures.map((p) => (
+              {service.procedures.map((p: string) => (
                 <li key={p} className="flex items-start gap-3 text-[15px]">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                   <span>{p}</span>
@@ -136,7 +136,7 @@ function ServicePage() {
               Common questions
             </h2>
             <div className="mt-6 divide-y divide-border">
-              {service.faqs.map((f) => (
+              {service.faqs.map((f: ServiceDetail["faqs"][number]) => (
                 <div key={f.q} className="py-5">
                   <p className="font-display font-semibold text-primary">{f.q}</p>
                   <p className="mt-2 text-muted-foreground">{f.a}</p>
