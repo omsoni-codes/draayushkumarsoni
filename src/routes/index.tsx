@@ -15,6 +15,9 @@ import { Footer } from "@/components/site/Footer";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { ScrollProgress } from "@/components/site/ScrollProgress";
 import { CursorGlow } from "@/components/site/CursorGlow";
+import { FAQ } from "@/components/site/FAQ";
+import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import { MobileCTABar } from "@/components/site/MobileCTABar";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -76,10 +79,13 @@ function Index() {
         <Conditions />
         <Experience />
         <Testimonials />
+        <FAQ />
         <Booking />
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFab />
+      <MobileCTABar />
       <Toaster position="top-center" richColors />
     </div>
   );
