@@ -16,8 +16,18 @@ import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { ScrollProgress } from "@/components/site/ScrollProgress";
 import { CursorGlow } from "@/components/site/CursorGlow";
 import { FAQ } from "@/components/site/FAQ";
+import { GoogleReviews } from "@/components/site/GoogleReviews";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { MobileCTABar } from "@/components/site/MobileCTABar";
+
+const faqEntries = [
+  { q: "What conditions does Dr. Aayush Soni treat?", a: "Fractures and complex trauma, arthritis of hip and knee, ligament and cartilage injuries, shoulder problems, spine and back pain, bone tumours and paediatric orthopaedics." },
+  { q: "Do I need a referral to book an appointment?", a: "No referral is required. Call +91 86024 20313, message on WhatsApp, or use the appointment form." },
+  { q: "What are the consulting hours?", a: "9:00 AM to 4:00 PM every day at Lakshya Multispeciality Hospital, Kolar Road, Bhopal. 24×7 emergency care is available." },
+  { q: "Is joint replacement surgery safe?", a: "Modern hip and knee replacements are among the most successful operations performed today, with excellent long-term outcomes." },
+  { q: "How soon can I walk after knee replacement?", a: "Most patients stand and take assisted steps within 24 hours of surgery and walk independently in the following days with guided physiotherapy." },
+  { q: "Do you accept insurance and cashless treatment?", a: "Lakshya Multispeciality Hospital is empanelled with most major insurance providers and TPAs. Call the clinic to confirm coverage." },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -58,6 +68,18 @@ export const Route = createFileRoute("/")({
           openingHours: "Mo-Su 09:00-16:00",
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqEntries.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
   component: Index,
@@ -79,6 +101,7 @@ function Index() {
         <Conditions />
         <Experience />
         <Testimonials />
+        <GoogleReviews />
         <FAQ />
         <Booking />
         <Contact />
