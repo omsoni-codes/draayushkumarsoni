@@ -2,33 +2,16 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { useLang } from "@/lib/i18n";
 
-const faqs = [
-  {
-    q: "What conditions does Dr. Aayush Soni treat?",
-    a: "Dr. Soni treats the full spectrum of orthopaedic conditions — fractures and complex trauma, arthritis of hip and knee, ligament and cartilage injuries, shoulder problems, spine and back pain, bone tumours, and paediatric orthopaedic issues.",
-  },
-  {
-    q: "Do I need a referral to book an appointment?",
-    a: "No referral is required. You can book directly by calling +91 86024 20313, messaging on WhatsApp, or filling out the appointment form on this page.",
-  },
-  {
-    q: "What are the consulting hours?",
-    a: "Consultations run every day from 9:00 AM to 4:00 PM at Lakshya Multispeciality Hospital, Kolar Road, Bhopal. 24×7 emergency care is available.",
-  },
-  {
-    q: "Is joint replacement surgery safe?",
-    a: "Modern hip and knee replacements are among the most successful operations performed today, with excellent long-term outcomes. Dr. Soni uses evidence-based protocols, modern implants and structured rehabilitation to help you return to activity safely.",
-  },
-  {
-    q: "How soon can I walk after knee replacement?",
-    a: "Most patients stand and take assisted steps within 24 hours of surgery and walk independently in the following days with the guided physiotherapy plan.",
-  },
-  {
-    q: "Do you accept insurance and cashless treatment?",
-    a: "Lakshya Multispeciality Hospital is empanelled with most major insurance providers and TPAs. Please call the clinic to confirm coverage before your visit.",
-  },
-];
+const keys = [
+  ["faq.q1", "faq.a1"],
+  ["faq.q2", "faq.a2"],
+  ["faq.q3", "faq.a3"],
+  ["faq.q4", "faq.a4"],
+  ["faq.q5", "faq.a5"],
+  ["faq.q6", "faq.a6"],
+] as const;
 
 function Item({ q, a, i }: { q: string; a: string; i: number }) {
   const [open, setOpen] = useState(false);
@@ -69,22 +52,20 @@ function Item({ q, a, i }: { q: string; a: string; i: number }) {
 }
 
 export function FAQ() {
+  const { t } = useLang();
   return (
     <section id="faq" className="bg-surface py-20 lg:py-28">
       <div className="container-x grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <span className="eyebrow">FAQ</span>
+          <span className="eyebrow">{t("faq.eyebrow")}</span>
           <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
-            Answers before you ask.
+            {t("faq.title")}
           </h2>
-          <p className="mt-4 text-muted-foreground">
-            The most common questions from patients. Still unsure? Message on
-            WhatsApp — we usually reply within the hour.
-          </p>
+          <p className="mt-4 text-muted-foreground">{t("faq.sub")}</p>
         </div>
         <div className="lg:col-span-8">
-          {faqs.map((f, i) => (
-            <Item key={f.q} q={f.q} a={f.a} i={i} />
+          {keys.map(([qk, ak], i) => (
+            <Item key={qk} q={t(qk)} a={t(ak)} i={i} />
           ))}
         </div>
       </div>

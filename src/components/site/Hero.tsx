@@ -5,6 +5,7 @@ import portrait from "@/assets/dr-aayush.jpg.asset.json";
 import { Counter } from "./Counter";
 import { SocialLinks } from "./SocialLinks";
 import { Magnetic } from "./Magnetic";
+import { useLang } from "@/lib/i18n";
 
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -20,6 +21,7 @@ const fadeUp: Variants = {
 };
 
 export function Hero() {
+  const { t } = useLang();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -74,7 +76,7 @@ export function Hero() {
             custom={1}
             className="eyebrow mt-8"
           >
-            Orthopaedic Surgeon · Bhopal
+            {t("hero.eyebrow")}
           </motion.span>
 
 
@@ -85,10 +87,10 @@ export function Hero() {
             custom={2}
             className="display-xl mt-6 max-w-5xl text-balance text-primary"
           >
-            Movement is medicine.
+            {t("hero.title.1")}
             <br />
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Restoring yours.
+              {t("hero.title.2")}
             </span>
           </motion.h1>
 
@@ -99,8 +101,7 @@ export function Hero() {
             custom={3}
             className="mt-8 max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl"
           >
-            Consultant orthopaedic surgeon at Lakshya Multispeciality Hospital —
-            trauma, joint replacement, arthroscopy and spine.
+            {t("hero.sub")}
           </motion.p>
 
           <motion.div
@@ -119,7 +120,7 @@ export function Hero() {
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-elegant"
               >
-                Book a consultation
+                {t("hero.cta.book")}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </motion.a>
             </Magnetic>
@@ -131,7 +132,7 @@ export function Hero() {
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-sm font-medium text-primary hover:bg-surface"
               >
-                Learn more
+                {t("hero.cta.learn")}
               </motion.a>
             </Magnetic>
           </motion.div>
@@ -144,7 +145,7 @@ export function Hero() {
             className="mt-6 flex flex-col items-center gap-3"
           >
             <span className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
-              Connect online
+              {t("hero.connect")}
             </span>
             <SocialLinks />
           </motion.div>
@@ -181,9 +182,9 @@ export function Hero() {
           className="mt-16 grid w-full max-w-3xl grid-cols-3 gap-4 border-t border-border pt-10"
         >
           {[
-            { label: "Experience", value: <Counter to={6} suffix="+ yrs" /> },
-            { label: "Surgeries", value: <Counter to={1000} suffix="+" /> },
-            { label: "Emergency", value: "24×7" },
+            { label: t("hero.stats.exp"), value: <Counter to={6} suffix={t("hero.stats.yrs")} /> },
+            { label: t("hero.stats.surg"), value: <Counter to={1000} suffix="+" /> },
+            { label: t("hero.stats.emer"), value: "24×7" },
           ].map((s) => (
             <div key={s.label} className="text-left sm:text-center">
               <dt className="text-[11px] uppercase tracking-[0.14em] text-muted-foreground">

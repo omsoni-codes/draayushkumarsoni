@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const links = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#conditions", label: "Conditions" },
-  { href: "#experience", label: "Experience" },
-  { href: "#testimonials", label: "Patients" },
-  { href: "#contact", label: "Contact" },
-];
+import { useLang } from "@/lib/i18n";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { lang, setLang, t } = useLang();
+
+  const links = [
+    { href: "#about", label: t("nav.about") },
+    { href: "#services", label: t("nav.services") },
+    { href: "#conditions", label: t("nav.conditions") },
+    { href: "#experience", label: t("nav.experience") },
+    { href: "#contact", label: t("nav.contact") },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -22,17 +23,25 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const LangToggle = ({ className = "" }: { className?: string }) => (
+    <button
+      onClick={() => setLang(lang === "en" ? "hi" : "en")}
+      className={`inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/60 px-3 py-1.5 text-[12px] font-semibold tracking-tight text-primary transition-colors hover:bg-surface ${className}`}
+      aria-label="Toggle language"
+    >
+      <Languages className="h-3.5 w-3.5" />
+      {lang === "en" ? "हिंदी" : "EN"}
+    </button>
+  );
+
   return (
     <motion.header
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed inset-x-3 top-3 z-50 mx-auto max-w-6xl rounded-full transition-all duration-500 ${
-        scrolled
-          ? "liquid-glass"
-          : "border border-transparent bg-transparent"
+        scrolled ? "liquid-glass" : "border border-transparent bg-transparent"
       }`}
-
     >
       <div className="container-x flex h-14 items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
@@ -56,20 +65,26 @@ export function Nav() {
           ))}
         </nav>
 
-        <a
-          href="#book"
-          className="hidden items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-[13px] font-medium text-primary-foreground transition-transform hover:scale-[1.03] md:inline-flex"
-        >
-          Book
-        </a>
+        <div className="hidden items-center gap-2 md:flex">
+          <LangToggle />
+          <a
+            href="#book"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-[13px] font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
+          >
+            {t("nav.book")}
+          </a>
+        </div>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="grid h-9 w-9 place-items-center rounded-full text-primary md:hidden"
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <LangToggle />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="grid h-9 w-9 place-items-center rounded-full text-primary"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -100,7 +115,7 @@ export function Nav() {
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground"
               >
-                Book Appointment
+                {t("nav.bookAppointment")}
               </a>
             </div>
           </motion.div>

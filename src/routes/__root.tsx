@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { LanguageProvider } from "../lib/i18n";
 
 function NotFoundComponent() {
   return (
@@ -87,15 +88,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Dr. Aayush Soni — Orthopaedic Surgeon, Bhopal" },
       { name: "twitter:description", content: "Expert orthopaedic care in Bhopal — trauma, joint replacement, arthroscopy, spine. 24×7 emergency." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8e2e43d8-57c1-4dc9-b4e7-2319d08b93b1/id-preview-397652aa--86820c3b-438e-439a-ba82-87599d031f2b.lovable.app-1780679708006.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8e2e43d8-57c1-4dc9-b4e7-2319d08b93b1/id-preview-397652aa--86820c3b-438e-439a-ba82-87599d031f2b.lovable.app-1780679708006.png" },
+      { property: "og:image", content: "https://draayushkumarsoni.lovable.app/__l5e/assets-v1/aa39faa6-fb54-4c76-8ce4-f30a1a4d2b9b/og-share.jpg" },
+      { name: "twitter:image", content: "https://draayushkumarsoni.lovable.app/__l5e/assets-v1/aa39faa6-fb54-4c76-8ce4-f30a1a4d2b9b/og-share.jpg" },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap",
       },
       {
         rel: "stylesheet",
@@ -128,8 +131,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <LanguageProvider>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
