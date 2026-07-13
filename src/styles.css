@@ -234,5 +234,24 @@
   }
 }
 
+/* Reduce heavy compositing on small screens for smoother scroll */
+@media (max-width: 768px) {
+  .liquid-glass,
+  .glass {
+    backdrop-filter: saturate(160%) blur(12px);
+  }
+  .hue-glow::before {
+    filter: blur(20px);
+    opacity: 0.35;
+    animation-duration: 20s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hue-glow::before { animation: none; }
+  * { scroll-behavior: auto !important; }
+}
+
+
 
 
