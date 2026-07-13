@@ -10,7 +10,7 @@ import { Magnetic } from "./Magnetic";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 32, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 28 },
   show: (i: number = 0) => ({
     opacity: 1,
     y: 0,
@@ -154,9 +154,9 @@ export function Hero() {
 
         {/* Parallax portrait */}
         <motion.div
-          initial={{ opacity: 0, y: 100, scale: 0.92, filter: "blur(14px)" }}
-          animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1.4, ease, delay: 0.4 }}
+          initial={{ opacity: 0, y: 60, scale: 0.94 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1.1, ease, delay: 0.3 }}
           style={{ y: imgY, scale: imgScale, rotate: imgRotate }}
           className="relative mt-16 w-full max-w-2xl"
         >

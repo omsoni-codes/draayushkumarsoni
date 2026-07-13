@@ -8,7 +8,7 @@ import { ScrollShowcase } from "@/components/site/ScrollShowcase";
 import { Services } from "@/components/site/Services";
 import { Conditions } from "@/components/site/Conditions";
 import { Experience } from "@/components/site/Experience";
-import { Testimonials } from "@/components/site/Testimonials";
+
 import { Booking } from "@/components/site/Booking";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
@@ -100,7 +100,7 @@ function Index() {
         <Services />
         <Conditions />
         <Experience />
-        <Testimonials />
+        
         <GoogleReviews />
         <FAQ />
         <Booking />

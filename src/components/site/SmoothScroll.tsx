@@ -5,6 +5,8 @@ export function SmoothScroll() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Lenis on touch devices often causes lag/jank; use native scroll there.
+    if (window.matchMedia("(hover: none), (pointer: coarse)").matches) return;
 
     const lenis = new Lenis({
       duration: 1.2,
