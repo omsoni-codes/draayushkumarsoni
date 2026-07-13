@@ -100,7 +100,7 @@ function Index() {
         <Services />
         <Conditions />
         <Experience />
-        <Testimonials />
+        
         <GoogleReviews />
         <FAQ />
         <Booking />
