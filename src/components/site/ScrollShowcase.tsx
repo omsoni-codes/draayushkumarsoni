@@ -4,6 +4,7 @@ import s1 from "@/assets/surgery-1.jpg.asset.json";
 import s2 from "@/assets/surgery-2.jpg.asset.json";
 import s3 from "@/assets/surgery-3.jpg.asset.json";
 import s4 from "@/assets/surgery-4.jpg.asset.json";
+import s5 from "@/assets/surgery-5.jpg.asset.json";
 
 const scenes = [
   {
@@ -29,6 +30,12 @@ const scenes = [
     kicker: "Recovery",
     title: "You move again.",
     body: "Personalised recovery plans and physiotherapy support that keep momentum going long after you leave the OT.",
+  },
+  {
+    img: s5.url,
+    kicker: "Craft",
+    title: "Steady hands, sharper outcomes.",
+    body: "Every instrument, every stitch — placed with the discipline of a surgeon who has done it a thousand times over.",
   },
 ];
 
