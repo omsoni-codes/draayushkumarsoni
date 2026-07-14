@@ -101,7 +101,7 @@ export function Loader() {
                     <motion.div
                       animate={{ rotate: -360 }}
                       transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/50 bg-white/40 text-primary shadow-lg backdrop-blur"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/50 bg-white/60 text-primary shadow-md"
                     >
                       <Icon className="h-5 w-5" strokeWidth={1.8} />
                     </motion.div>
@@ -116,7 +116,7 @@ export function Loader() {
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="flex h-20 w-20 items-center justify-center rounded-full border border-white/60 bg-white/60 backdrop-blur-md sm:h-24 sm:w-24"
+                className="flex h-20 w-20 items-center justify-center rounded-full border border-white/60 bg-white/70 sm:h-24 sm:w-24"
               >
                 <span className="font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl">
                   A
@@ -128,8 +128,8 @@ export function Loader() {
           {/* Doctor name */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: [0, 1, 1, 0] }}
-            transition={{ duration: 2.6, times: [0, 0.25, 0.7, 0.85] }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="absolute bottom-[22%] flex flex-col items-center gap-2"
           >
             <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
