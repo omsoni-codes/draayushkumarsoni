@@ -19,6 +19,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { GoogleReviews } from "@/components/site/GoogleReviews";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { MobileCTABar } from "@/components/site/MobileCTABar";
+import { Loader } from "@/components/site/Loader";
 
 const faqEntries = [
   { q: "What conditions does Dr. Aayush Soni treat?", a: "Fractures and complex trauma, arthritis of hip and knee, ligament and cartilage injuries, shoulder problems, spine and back pain, bone tumours and paediatric orthopaedics." },
