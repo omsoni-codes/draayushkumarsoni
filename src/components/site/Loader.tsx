@@ -21,7 +21,7 @@ export function Loader() {
     const t = setTimeout(() => {
       document.body.style.overflow = original;
       setShow(false);
-    }, 2600);
+    }, 1900);
     return () => {
       clearTimeout(t);
       document.body.style.overflow = original;
