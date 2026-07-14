@@ -21,7 +21,7 @@ export function Loader() {
     const t = setTimeout(() => {
       document.body.style.overflow = original;
       setShow(false);
-    }, 2600);
+    }, 1900);
     return () => {
       clearTimeout(t);
       document.body.style.overflow = original;
@@ -34,8 +34,8 @@ export function Loader() {
         <motion.div
           key="loader"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          exit={{ opacity: 0, scale: 1.15, filter: "blur(6px)" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-background"
         >
           {/* Ambient background glow */}
@@ -50,16 +50,10 @@ export function Loader() {
 
           {/* Bubble */}
           <motion.div
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={{
-              scale: [0.6, 1, 1, 22],
-              opacity: [0, 1, 1, 0],
-            }}
-            transition={{
-              duration: 2.6,
-              times: [0, 0.2, 0.75, 1],
-              ease: [0.7, 0, 0.3, 1],
-            }}
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            style={{ willChange: "transform, opacity" }}
             className="relative h-64 w-64 sm:h-80 sm:w-80"
           >
             {/* Glass sphere */}
@@ -70,9 +64,9 @@ export function Loader() {
                   "radial-gradient(circle at 30% 25%, color-mix(in oklab, white 55%, transparent), color-mix(in oklab, var(--color-accent) 18%, transparent) 55%, color-mix(in oklab, var(--color-primary) 22%, transparent) 100%)",
                 boxShadow:
                   "inset 0 4px 30px color-mix(in oklab, white 55%, transparent), inset 0 -20px 60px color-mix(in oklab, var(--color-accent) 30%, transparent), 0 30px 90px -20px color-mix(in oklab, var(--color-accent) 40%, transparent)",
-                backdropFilter: "blur(20px) saturate(160%)",
               }}
             />
+
             {/* Specular highlight */}
             <div
               aria-hidden
@@ -107,7 +101,7 @@ export function Loader() {
                     <motion.div
                       animate={{ rotate: -360 }}
                       transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/50 bg-white/40 text-primary shadow-lg backdrop-blur"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/50 bg-white/60 text-primary shadow-md"
                     >
                       <Icon className="h-5 w-5" strokeWidth={1.8} />
                     </motion.div>
@@ -122,7 +116,7 @@ export function Loader() {
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="flex h-20 w-20 items-center justify-center rounded-full border border-white/60 bg-white/60 backdrop-blur-md sm:h-24 sm:w-24"
+                className="flex h-20 w-20 items-center justify-center rounded-full border border-white/60 bg-white/70 sm:h-24 sm:w-24"
               >
                 <span className="font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl">
                   A
@@ -134,8 +128,8 @@ export function Loader() {
           {/* Doctor name */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: [0, 1, 1, 0] }}
-            transition={{ duration: 2.6, times: [0, 0.25, 0.7, 0.85] }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="absolute bottom-[22%] flex flex-col items-center gap-2"
           >
             <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
