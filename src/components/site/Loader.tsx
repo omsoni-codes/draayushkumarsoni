@@ -34,8 +34,8 @@ export function Loader() {
         <motion.div
           key="loader"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          exit={{ opacity: 0, scale: 1.15, filter: "blur(6px)" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-background"
         >
           {/* Ambient background glow */}
@@ -50,16 +50,10 @@ export function Loader() {
 
           {/* Bubble */}
           <motion.div
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={{
-              scale: [0.6, 1, 1, 22],
-              opacity: [0, 1, 1, 0],
-            }}
-            transition={{
-              duration: 2.6,
-              times: [0, 0.2, 0.75, 1],
-              ease: [0.7, 0, 0.3, 1],
-            }}
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            style={{ willChange: "transform, opacity" }}
             className="relative h-64 w-64 sm:h-80 sm:w-80"
           >
             {/* Glass sphere */}
@@ -70,9 +64,9 @@ export function Loader() {
                   "radial-gradient(circle at 30% 25%, color-mix(in oklab, white 55%, transparent), color-mix(in oklab, var(--color-accent) 18%, transparent) 55%, color-mix(in oklab, var(--color-primary) 22%, transparent) 100%)",
                 boxShadow:
                   "inset 0 4px 30px color-mix(in oklab, white 55%, transparent), inset 0 -20px 60px color-mix(in oklab, var(--color-accent) 30%, transparent), 0 30px 90px -20px color-mix(in oklab, var(--color-accent) 40%, transparent)",
-                backdropFilter: "blur(20px) saturate(160%)",
               }}
             />
+
             {/* Specular highlight */}
             <div
               aria-hidden
