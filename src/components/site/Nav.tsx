@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Languages } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "@/lib/i18n";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { lang, setLang, t } = useLang();
+  const { t } = useLang();
 
   const links = [
     { href: "#about", label: t("nav.about") },
@@ -22,17 +22,6 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const LangToggle = ({ className = "" }: { className?: string }) => (
-    <button
-      onClick={() => setLang(lang === "en" ? "hi" : "en")}
-      className={`inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/60 px-3 py-1.5 text-[12px] font-semibold tracking-tight text-primary transition-colors hover:bg-surface ${className}`}
-      aria-label="Toggle language"
-    >
-      <Languages className="h-3.5 w-3.5" />
-      {lang === "en" ? "हिंदी" : "EN"}
-    </button>
-  );
 
   return (
     <motion.header
@@ -66,7 +55,6 @@ export function Nav() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <LangToggle />
           <a
             href="#book"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-[13px] font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
@@ -76,7 +64,6 @@ export function Nav() {
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <LangToggle />
           <button
             onClick={() => setOpen((v) => !v)}
             className="grid h-9 w-9 place-items-center rounded-full text-primary"
