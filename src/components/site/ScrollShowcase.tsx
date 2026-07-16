@@ -1,38 +1,38 @@
 import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-motion";
 import { useRef } from "react";
-import s1 from "@/assets/surgery-1.jpg.asset.json";
-import s2 from "@/assets/surgery-2.jpg.asset.json";
-import s3 from "@/assets/surgery-3.jpg.asset.json";
-import s4 from "@/assets/surgery-4.jpg.asset.json";
-import s5 from "@/assets/surgery-5.jpg.asset.json";
+import s1 from "@/assets/surgery-1.jpg";
+import s2 from "@/assets/surgery-2.jpg";
+import s3 from "@/assets/surgery-3.jpg";
+import s4 from "@/assets/surgery-4.jpg";
+import s5 from "@/assets/surgery-5.jpg";
 
 const scenes = [
   {
-    img: s1.url,
+    img: s1,
     kicker: "Precision",
     title: "Surgery that respects your body.",
     body: "Minimally invasive techniques, modern implants and evidence-based protocols — refined across thousands of cases.",
   },
   {
-    img: s2.url,
+    img: s2,
     kicker: "Team",
     title: "A theatre built on trust.",
     body: "Every procedure runs on a coordinated team — anaesthesia, nursing and rehab — trained in the smallest details.",
   },
   {
-    img: s3.url,
+    img: s3,
     kicker: "Focus",
     title: "Nothing left to chance.",
     body: "Pre-op planning, intra-op navigation and post-op checks — designed to get you back on your feet, faster.",
   },
   {
-    img: s4.url,
+    img: s4,
     kicker: "Recovery",
     title: "You move again.",
     body: "Personalised recovery plans and physiotherapy support that keep momentum going long after you leave the OT.",
   },
   {
-    img: s5.url,
+    img: s5,
     kicker: "Craft",
     title: "Steady hands, sharper outcomes.",
     body: "Every instrument, every stitch — placed with the discipline of a surgeon who has done it a thousand times over.",
