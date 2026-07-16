@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion, useScroll, useSpring, useTransform, type Variants } from "framer-motion";
 import { useRef } from "react";
-import portrait from "@/assets/dr-aayush.jpg.asset.json";
+import portrait from "@/assets/dr-aayush.jpg";
 import { Counter } from "./Counter";
 import { SocialLinks } from "./SocialLinks";
 import { Magnetic } from "./Magnetic";
