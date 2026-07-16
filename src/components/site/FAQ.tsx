@@ -21,9 +21,7 @@ function Item({ q, a, i }: { q: string; a: string; i: number }) {
         onClick={() => setOpen((v) => !v)}
         className="flex w-full items-center justify-between gap-6 py-6 text-left"
       >
-        <span className="font-display text-base font-semibold text-primary sm:text-lg">
-          {q}
-        </span>
+        <span className="font-display text-base font-semibold text-primary sm:text-lg">{q}</span>
         <motion.span
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -58,9 +56,7 @@ export function FAQ() {
       <div className="container-x grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <span className="eyebrow">{t("faq.eyebrow")}</span>
-          <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
-            {t("faq.title")}
-          </h2>
+          <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">{t("faq.title")}</h2>
           <p className="mt-4 text-muted-foreground">{t("faq.sub")}</p>
         </div>
         <div className="lg:col-span-8">

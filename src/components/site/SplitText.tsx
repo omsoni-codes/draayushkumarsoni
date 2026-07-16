@@ -24,12 +24,7 @@ interface SplitTextProps {
   stagger?: number;
 }
 
-export function SplitText({
-  text,
-  className,
-  as: Tag = "h2",
-  stagger = 0.05,
-}: SplitTextProps) {
+export function SplitText({ text, className, as: Tag = "h2", stagger = 0.05 }: SplitTextProps) {
   const MotionTag = motion[Tag] as typeof motion.h2;
   const words = text.split(" ");
   return (

@@ -56,8 +56,8 @@ export function Booking() {
                 Take the first step toward pain-free movement.
               </h2>
               <p className="mt-4 text-primary-foreground/75">
-                Request a consultation — our team will confirm a slot that
-                suits you, usually within the same day.
+                Request a consultation — our team will confirm a slot that suits you, usually within
+                the same day.
               </p>
 
               <ul className="mt-8 space-y-4 text-sm">

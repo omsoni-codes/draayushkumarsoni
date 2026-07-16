@@ -33,9 +33,7 @@ export function GoogleReviews() {
                 <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
               ))}
             </span>
-            <span className="text-sm font-semibold text-primary">
-              5.0 on Google
-            </span>
+            <span className="text-sm font-semibold text-primary">5.0 on Google</span>
           </div>
           <h2 className="mt-6 font-display text-3xl font-semibold sm:text-4xl">
             Trusted by patients across Bhopal.

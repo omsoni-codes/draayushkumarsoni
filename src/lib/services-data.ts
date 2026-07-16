@@ -26,8 +26,14 @@ export const services: ServiceDetail[] = [
     recovery:
       "Most simple fractures allow partial weight-bearing within days. Complex reconstructions follow a staged rehab plan tailored to your injury and goals.",
     faqs: [
-      { q: "Do you handle emergencies at night?", a: "Yes — 24×7 emergency orthopaedic care is available. Call +91 86024 20313." },
-      { q: "How soon should I come after a fall or accident?", a: "The sooner the better. Early fixation reduces swelling, pain and long-term stiffness." },
+      {
+        q: "Do you handle emergencies at night?",
+        a: "Yes — 24×7 emergency orthopaedic care is available. Call +91 86024 20313.",
+      },
+      {
+        q: "How soon should I come after a fall or accident?",
+        a: "The sooner the better. Early fixation reduces swelling, pain and long-term stiffness.",
+      },
     ],
   },
   {
@@ -46,8 +52,14 @@ export const services: ServiceDetail[] = [
     recovery:
       "Most patients stand within 24 hours, walk with support in 2–3 days, and return to daily activity within 4–6 weeks with structured physiotherapy.",
     faqs: [
-      { q: "How long does a modern knee last?", a: "Contemporary implants routinely last 15–20 years with normal activity." },
-      { q: "Will I need both knees done together?", a: "It depends on your symptoms, weight and general health — Dr. Soni will discuss single vs. bilateral replacement in your consultation." },
+      {
+        q: "How long does a modern knee last?",
+        a: "Contemporary implants routinely last 15–20 years with normal activity.",
+      },
+      {
+        q: "Will I need both knees done together?",
+        a: "It depends on your symptoms, weight and general health — Dr. Soni will discuss single vs. bilateral replacement in your consultation.",
+      },
     ],
   },
   {
@@ -67,7 +79,10 @@ export const services: ServiceDetail[] = [
     recovery:
       "Discharge is usually same-day or next-day. Return to running typically 3–4 months post-ACL, and to contact sport 6–9 months with rehabilitation.",
     faqs: [
-      { q: "Is ACL surgery necessary?", a: "For active people or those with instability, reconstruction protects the knee from further meniscus & cartilage damage." },
+      {
+        q: "Is ACL surgery necessary?",
+        a: "For active people or those with instability, reconstruction protects the knee from further meniscus & cartilage damage.",
+      },
     ],
   },
   {
@@ -86,7 +101,10 @@ export const services: ServiceDetail[] = [
     recovery:
       "Most microsurgical procedures allow you to walk the same day and go home within 1–2 days. Structured core-strengthening follows.",
     faqs: [
-      { q: "Do all slipped discs need surgery?", a: "No — most improve with medication, physiotherapy and posture correction. Surgery is reserved for persistent pain or neurological weakness." },
+      {
+        q: "Do all slipped discs need surgery?",
+        a: "No — most improve with medication, physiotherapy and posture correction. Surgery is reserved for persistent pain or neurological weakness.",
+      },
     ],
   },
   {
@@ -104,7 +122,10 @@ export const services: ServiceDetail[] = [
     recovery:
       "Recovery is highly individual. Dr. Soni coordinates with medical oncology and physiotherapy for a comprehensive plan.",
     faqs: [
-      { q: "How is a bone tumour diagnosed?", a: "Through clinical exam, X-ray, MRI and — when needed — a biopsy performed in a planned oncology setting." },
+      {
+        q: "How is a bone tumour diagnosed?",
+        a: "Through clinical exam, X-ray, MRI and — when needed — a biopsy performed in a planned oncology setting.",
+      },
     ],
   },
   {
@@ -123,7 +144,10 @@ export const services: ServiceDetail[] = [
     recovery:
       "Children heal fast — most treatments allow return to school within days to weeks depending on the procedure.",
     faqs: [
-      { q: "At what age should clubfoot be treated?", a: "Ideally within the first few weeks of life for best results with the Ponseti technique." },
+      {
+        q: "At what age should clubfoot be treated?",
+        a: "Ideally within the first few weeks of life for best results with the Ponseti technique.",
+      },
     ],
   },
 ];

@@ -1,7 +1,6 @@
 import { MapPin, Phone, Mail, Clock, Link2 } from "lucide-react";
 import { SocialLinks } from "./SocialLinks";
 
-
 export function Contact() {
   return (
     <section id="contact" className="bg-surface py-20 lg:py-28">
@@ -23,8 +22,10 @@ export function Contact() {
               <div>
                 <p className="font-display text-sm font-semibold text-primary">Clinic address</p>
                 <p className="text-sm text-muted-foreground">
-                  Lakshya Multispeciality Hospital<br />
-                  Danish Kunj, Kolar Road<br />
+                  Lakshya Multispeciality Hospital
+                  <br />
+                  Danish Kunj, Kolar Road
+                  <br />
                   Bhopal — 462042, Madhya Pradesh
                 </p>
                 <a
@@ -43,7 +44,10 @@ export function Contact() {
               </span>
               <div>
                 <p className="font-display text-sm font-semibold text-primary">Phone</p>
-                <a href="tel:+918602420313" className="text-sm text-muted-foreground hover:text-accent">
+                <a
+                  href="tel:+918602420313"
+                  className="text-sm text-muted-foreground hover:text-accent"
+                >
                   +91 86024 20313
                 </a>
               </div>
@@ -54,7 +58,10 @@ export function Contact() {
               </span>
               <div>
                 <p className="font-display text-sm font-semibold text-primary">Email</p>
-                <a href="mailto:aayushkumarsoni95@gmail.com" className="text-sm text-muted-foreground hover:text-accent">
+                <a
+                  href="mailto:aayushkumarsoni95@gmail.com"
+                  className="text-sm text-muted-foreground hover:text-accent"
+                >
                   aayushkumarsoni95@gmail.com
                 </a>
               </div>
@@ -66,7 +73,8 @@ export function Contact() {
               <div>
                 <p className="font-display text-sm font-semibold text-primary">Consulting hours</p>
                 <p className="text-sm text-muted-foreground">
-                  Every day · 9:00 AM – 4:00 PM<br />
+                  Every day · 9:00 AM – 4:00 PM
+                  <br />
                   24×7 emergency visits available
                 </p>
               </div>
@@ -81,7 +89,6 @@ export function Contact() {
               </div>
             </li>
           </ul>
-
         </div>
 
         <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
