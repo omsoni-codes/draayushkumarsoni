@@ -164,7 +164,7 @@ export function Hero() {
           <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-accent/25 via-transparent to-transparent blur-3xl" />
           <div className="liquid-glass overflow-hidden rounded-[2rem] p-2">
             <img
-              src={portrait.url}
+              src={portrait}
               alt="Dr. Aayush Soni, orthopaedic surgeon"
               width={1024}
               height={1280}
