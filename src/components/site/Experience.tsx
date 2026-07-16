@@ -15,7 +15,7 @@ export function Experience() {
       <div className="container-x grid gap-12 lg:grid-cols-2 lg:items-center">
         <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
           <img
-            src={surgery.url}
+            src={surgery}
             alt="Dr. Aayush Soni performing surgery"
             loading="lazy"
             className="aspect-[4/5] h-full w-full object-cover"
