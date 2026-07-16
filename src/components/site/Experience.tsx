@@ -1,11 +1,10 @@
-import surgery from "@/assets/surgery-1.jpg.asset.json";
+import surgery from "@/assets/surgery-1.jpg";
 import { motion } from "framer-motion";
 
 const timeline = [
   { year: "Present", title: "Assistant Professor, Orthopaedics", place: "RKMC, Bhopal" },
   { year: "Present", title: "Consultant Orthopaedic Surgeon", place: "Lakshya Multispeciality Hospital, Bhopal" },
   { year: "Previously", title: "Senior Resident", place: "ABVGMC, Vidisha" },
-  { year: "Previously", title: "Consultant", place: "Bansal Hospital, Bhopal" },
   { year: "Previously", title: "Resident, Orthopaedics", place: "Sri Aurobindo Medical College, Indore" },
   { year: "Previously", title: "Resident, Orthopaedics", place: "AIIMS, Bhopal" },
 ];
