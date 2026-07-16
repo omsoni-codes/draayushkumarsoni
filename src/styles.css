@@ -40,19 +40,20 @@
 
   --shadow-elegant: 0 30px 80px -30px color-mix(in oklab, var(--ink) 30%, transparent);
   --shadow-soft: 0 10px 40px -20px color-mix(in oklab, var(--ink) 18%, transparent);
-  --shadow-glass: 0 1px 0 0 color-mix(in oklab, white 60%, transparent) inset,
-                  0 20px 50px -20px color-mix(in oklab, var(--ink) 22%, transparent);
+  --shadow-glass:
+    0 1px 0 0 color-mix(in oklab, white 60%, transparent) inset,
+    0 20px 50px -20px color-mix(in oklab, var(--ink) 22%, transparent);
 }
 
 :root {
   --radius: 1rem;
 
   /* Apple-inspired refined mono palette + single premium blue */
-  --background: oklch(0.995 0 0);                /* near paper white */
-  --foreground: oklch(0.14 0.005 260);           /* near-black ink */
-  --ink: oklch(0.10 0.005 260);
+  --background: oklch(0.995 0 0); /* near paper white */
+  --foreground: oklch(0.14 0.005 260); /* near-black ink */
+  --ink: oklch(0.1 0.005 260);
 
-  --surface: oklch(0.97 0.003 260);              /* faint gray fill */
+  --surface: oklch(0.97 0.003 260); /* faint gray fill */
   --surface-foreground: oklch(0.14 0.005 260);
 
   --card: oklch(1 0 0);
@@ -61,17 +62,17 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.14 0.005 260);
 
-  --primary: oklch(0.14 0.005 260);              /* graphite */
+  --primary: oklch(0.14 0.005 260); /* graphite */
   --primary-foreground: oklch(0.995 0 0);
 
-  --secondary: oklch(0.30 0.008 260);
+  --secondary: oklch(0.3 0.008 260);
   --secondary-foreground: oklch(0.995 0 0);
 
-  --accent: oklch(0.62 0.16 250);                /* Apple-blue */
+  --accent: oklch(0.62 0.16 250); /* Apple-blue */
   --accent-foreground: oklch(0.995 0 0);
 
   --muted: oklch(0.96 0.003 260);
-  --muted-foreground: oklch(0.50 0.008 260);
+  --muted-foreground: oklch(0.5 0.008 260);
 
   --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: oklch(0.995 0 0);
@@ -84,7 +85,7 @@
   --chart-2: oklch(0.35 0.01 260);
   --chart-3: oklch(0.62 0.16 250);
   --chart-4: oklch(0.75 0.05 250);
-  --chart-5: oklch(0.50 0.008 260);
+  --chart-5: oklch(0.5 0.008 260);
 
   --sidebar: oklch(0.995 0 0);
   --sidebar-foreground: oklch(0.14 0.005 260);
@@ -116,7 +117,12 @@
     font-feature-settings: "ss01", "cv11";
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     letter-spacing: -0.035em;
     color: var(--color-primary);
@@ -177,10 +183,12 @@
 @utility liquid-glass {
   position: relative;
   background:
-    linear-gradient(135deg,
+    linear-gradient(
+      135deg,
       color-mix(in oklab, white 55%, transparent) 0%,
       color-mix(in oklab, white 18%, transparent) 40%,
-      color-mix(in oklab, white 8%, transparent) 100%),
+      color-mix(in oklab, white 8%, transparent) 100%
+    ),
     color-mix(in oklab, var(--color-background) 40%, transparent);
   backdrop-filter: saturate(180%) blur(20px);
   border: 1px solid color-mix(in oklab, white 45%, transparent);
@@ -193,11 +201,12 @@
 }
 
 @utility liquid-glass-dark {
-  background:
-    linear-gradient(135deg,
-      color-mix(in oklab, white 18%, transparent) 0%,
-      color-mix(in oklab, white 6%, transparent) 40%,
-      color-mix(in oklab, white 2%, transparent) 100%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, white 18%, transparent) 0%,
+    color-mix(in oklab, white 6%, transparent) 40%,
+    color-mix(in oklab, white 2%, transparent) 100%
+  );
   backdrop-filter: saturate(180%) blur(28px);
   border: 1px solid color-mix(in oklab, white 18%, transparent);
   box-shadow:
@@ -207,8 +216,12 @@
 }
 
 @keyframes hue-rotate {
-  from { filter: hue-rotate(0deg); }
-  to { filter: hue-rotate(360deg); }
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
 
 @utility hue-glow {
@@ -248,10 +261,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hue-glow::before { animation: none; }
-  * { scroll-behavior: auto !important; }
+  .hue-glow::before {
+    animation: none;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
 }
-
-
-
-

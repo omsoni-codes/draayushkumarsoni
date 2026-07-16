@@ -75,11 +75,7 @@ function Scene({
         style={{ scale, y }}
         className="col-span-1 h-[55vh] overflow-hidden rounded-3xl border border-primary-foreground/10 lg:col-span-7 lg:h-[72vh]"
       >
-        <img
-          src={scene.img}
-          alt={scene.title}
-          className="h-full w-full object-cover"
-        />
+        <img src={scene.img} alt={scene.title} className="h-full w-full object-cover" />
       </motion.div>
       <motion.div style={{ y: textY }} className="col-span-1 lg:col-span-5 lg:pl-4">
         <span className="eyebrow !text-accent">{scene.kicker}</span>
@@ -153,13 +149,7 @@ export function ScrollShowcase() {
         <div className="container-x relative flex-1">
           <div className="relative h-full">
             {scenes.map((scene, i) => (
-              <Scene
-                key={i}
-                index={i}
-                total={scenes.length}
-                progress={smooth}
-                scene={scene}
-              />
+              <Scene key={i} index={i} total={scenes.length} progress={smooth} scene={scene} />
             ))}
           </div>
         </div>

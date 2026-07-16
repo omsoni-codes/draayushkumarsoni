@@ -2,9 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const PHONE = "918602420313";
-const MSG = encodeURIComponent(
-  "Hi Dr. Aayush Soni, I'd like to book an appointment.",
-);
+const MSG = encodeURIComponent("Hi Dr. Aayush Soni, I'd like to book an appointment.");
 
 export function WhatsAppFab() {
   return (

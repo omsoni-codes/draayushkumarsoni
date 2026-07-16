@@ -23,7 +23,10 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export function Conditions() {
   return (
-    <section id="conditions" className="relative overflow-hidden bg-primary py-28 text-primary-foreground lg:py-40">
+    <section
+      id="conditions"
+      className="relative overflow-hidden bg-primary py-28 text-primary-foreground lg:py-40"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-40"
@@ -45,8 +48,7 @@ export function Conditions() {
             From everyday aches to complex injuries.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/70">
-            If your pain limits how you move, work or sleep — it's worth a
-            proper evaluation.
+            If your pain limits how you move, work or sleep — it's worth a proper evaluation.
           </p>
         </motion.div>
 

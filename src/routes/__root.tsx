@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -79,17 +80,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Dr. Aayush Soni — Orthopaedic Surgeon, Bhopal" },
-      { name: "description", content: "Dr. Aayush Soni (MBBS, MS Ortho) — orthopaedic surgeon in Bhopal. Trauma, joint replacement, arthroscopy, spine. Call +91 86024 20313." },
+      {
+        name: "description",
+        content:
+          "Dr. Aayush Soni (MBBS, MS Ortho) — orthopaedic surgeon in Bhopal. Trauma, joint replacement, arthroscopy, spine. Call +91 86024 20313.",
+      },
       { name: "author", content: "Dr. Aayush Soni" },
       { property: "og:title", content: "Dr. Aayush Soni — Orthopaedic Surgeon, Bhopal" },
-      { property: "og:description", content: "Expert orthopaedic care in Bhopal — trauma, joint replacement, arthroscopy, spine. 24×7 emergency." },
+      {
+        property: "og:description",
+        content:
+          "Expert orthopaedic care in Bhopal — trauma, joint replacement, arthroscopy, spine. 24×7 emergency.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Dr. Aayush Soni" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Dr. Aayush Soni — Orthopaedic Surgeon, Bhopal" },
-      { name: "twitter:description", content: "Expert orthopaedic care in Bhopal — trauma, joint replacement, arthroscopy, spine. 24×7 emergency." },
-      { property: "og:image", content: "https://draayushkumarsoni.lovable.app/__l5e/assets-v1/aa39faa6-fb54-4c76-8ce4-f30a1a4d2b9b/og-share.jpg" },
-      { name: "twitter:image", content: "https://draayushkumarsoni.lovable.app/__l5e/assets-v1/aa39faa6-fb54-4c76-8ce4-f30a1a4d2b9b/og-share.jpg" },
+      {
+        name: "twitter:description",
+        content:
+          "Expert orthopaedic care in Bhopal — trauma, joint replacement, arthroscopy, spine. 24×7 emergency.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://draayushkumarsoni.lovable.app/__l5e/assets-v1/aa39faa6-fb54-4c76-8ce4-f30a1a4d2b9b/og-share.jpg",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://draayushkumarsoni.lovable.app/__l5e/assets-v1/aa39faa6-fb54-4c76-8ce4-f30a1a4d2b9b/og-share.jpg",
+      },
     ],
     links: [
       { rel: "icon", type: "image/png", href: "/favicon.png" },
@@ -121,6 +142,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );

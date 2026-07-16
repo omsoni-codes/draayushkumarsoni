@@ -15,7 +15,10 @@ const items = [
 export function Marquee() {
   const row = [...items, ...items];
   return (
-    <section aria-label="Credentials" className="border-y border-border bg-background py-8 overflow-hidden">
+    <section
+      aria-label="Credentials"
+      className="border-y border-border bg-background py-8 overflow-hidden"
+    >
       <motion.div
         className="flex gap-14 whitespace-nowrap"
         animate={{ x: ["0%", "-50%"] }}

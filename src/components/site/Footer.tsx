@@ -18,7 +18,9 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-[13px] text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} Dr. Aayush Soni. {t("footer.rights")}</p>
+          <p>
+            © {new Date().getFullYear()} Dr. Aayush Soni. {t("footer.rights")}
+          </p>
           <p className="tracking-tight">{t("footer.tag")}</p>
         </div>
       </div>

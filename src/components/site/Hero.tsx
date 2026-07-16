@@ -7,7 +7,6 @@ import { SocialLinks } from "./SocialLinks";
 import { Magnetic } from "./Magnetic";
 import { useLang } from "@/lib/i18n";
 
-
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const fadeUp: Variants = {
@@ -36,11 +35,7 @@ export function Hero() {
   const textOpacity = useTransform(springy, [0, 0.7], [1, 0]);
 
   return (
-    <section
-      ref={ref}
-      id="top"
-      className="relative min-h-[100svh] overflow-hidden pt-24"
-    >
+    <section ref={ref} id="top" className="relative min-h-[100svh] overflow-hidden pt-24">
       {/* Soft radial ambience */}
       <div
         aria-hidden
@@ -52,7 +47,10 @@ export function Hero() {
       />
 
       <div className="container-x flex flex-col items-center pt-8 text-center">
-        <motion.div style={{ y: textY, opacity: textOpacity }} className="flex flex-col items-center">
+        <motion.div
+          style={{ y: textY, opacity: textOpacity }}
+          className="flex flex-col items-center"
+        >
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -78,7 +76,6 @@ export function Hero() {
           >
             {t("hero.eyebrow")}
           </motion.span>
-
 
           <motion.h1
             variants={fadeUp}
@@ -111,7 +108,6 @@ export function Hero() {
             custom={4}
             className="mt-10 flex flex-wrap items-center justify-center gap-3"
           >
-
             <Magnetic>
               <motion.a
                 href="#book"
@@ -149,9 +145,7 @@ export function Hero() {
             </span>
             <SocialLinks />
           </motion.div>
-
         </motion.div>
-
 
         {/* Parallax portrait */}
         <motion.div
@@ -171,7 +165,6 @@ export function Hero() {
               className="aspect-[4/5] h-full w-full rounded-[1.6rem] object-cover object-[center_20%] sm:aspect-[5/6]"
             />
           </div>
-
         </motion.div>
 
         {/* Stats bar */}

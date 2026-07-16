@@ -35,10 +35,9 @@ export function About() {
             transition={{ duration: 0.7, ease }}
             className="text-lg leading-relaxed text-muted-foreground sm:text-xl"
           >
-            Dr. Aayush Soni (MBBS, MS Orthopaedics) is a consultant orthopaedic
-            surgeon based in Bhopal with over 6 years of clinical and surgical
-            experience. He currently practices at Lakshya Multispeciality
-            Hospital, Kolar Road and serves as Assistant Professor at RKMC
+            Dr. Aayush Soni (MBBS, MS Orthopaedics) is a consultant orthopaedic surgeon based in
+            Bhopal with over 6 years of clinical and surgical experience. He currently practices at
+            Lakshya Multispeciality Hospital, Kolar Road and serves as Assistant Professor at RKMC
             Bhopal.
           </motion.p>
           <motion.p
@@ -48,9 +47,8 @@ export function About() {
             transition={{ duration: 0.7, delay: 0.1, ease }}
             className="mt-6 text-lg leading-relaxed text-muted-foreground sm:text-xl"
           >
-            His training spans premier institutions including AIIMS Bhopal,
-            Sri Aurobindo Medical College Indore, ABVGMC Vidisha and Bansal
-            Hospital.
+            His training spans premier institutions including AIIMS Bhopal, Sri Aurobindo Medical
+            College Indore, ABVGMC Vidisha and Bansal Hospital.
           </motion.p>
 
           <ul className="mt-12 grid gap-3 sm:grid-cols-2">

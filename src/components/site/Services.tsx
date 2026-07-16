@@ -57,12 +57,9 @@ export function Services() {
       <div ref={ref} className="container-x">
         <motion.div style={{ y: titleY }} className="mx-auto max-w-3xl text-center">
           <span className="eyebrow">Treatments</span>
-          <h2 className="display-lg mt-4 text-balance">
-            Everything your bones and joints need.
-          </h2>
+          <h2 className="display-lg mt-4 text-balance">Everything your bones and joints need.</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Comprehensive orthopaedic care — refined by experience, delivered
-            with patience.
+            Comprehensive orthopaedic care — refined by experience, delivered with patience.
           </p>
         </motion.div>
 
@@ -102,9 +99,7 @@ export function Services() {
                 <h3 className="mt-8 font-display text-xl font-semibold tracking-tight text-primary">
                   {title}
                 </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
-                  {body}
-                </p>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{body}</p>
                 <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-accent">
                   Learn more →
                 </span>

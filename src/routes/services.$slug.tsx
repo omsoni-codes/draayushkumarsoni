@@ -85,17 +85,13 @@ function ServicePage() {
             <span className="eyebrow">Treatment</span>
             <h1 className="display-lg mt-4 text-balance">{service.title}</h1>
             <p className="mt-4 text-lg text-accent">{service.tagline}</p>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              {service.intro}
-            </p>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{service.intro}</p>
           </motion.div>
         </section>
 
         <section className="container-x mt-20 grid gap-12 lg:grid-cols-2">
           <div className="liquid-glass rounded-3xl p-8">
-            <h2 className="font-display text-2xl font-semibold text-primary">
-              Procedures offered
-            </h2>
+            <h2 className="font-display text-2xl font-semibold text-primary">Procedures offered</h2>
             <ul className="mt-6 space-y-3">
               {service.procedures.map((p: string) => (
                 <li key={p} className="flex items-start gap-3 text-[15px]">
@@ -106,12 +102,8 @@ function ServicePage() {
             </ul>
           </div>
           <div className="liquid-glass rounded-3xl p-8">
-            <h2 className="font-display text-2xl font-semibold text-primary">
-              Recovery
-            </h2>
-            <p className="mt-6 leading-relaxed text-muted-foreground">
-              {service.recovery}
-            </p>
+            <h2 className="font-display text-2xl font-semibold text-primary">Recovery</h2>
+            <p className="mt-6 leading-relaxed text-muted-foreground">{service.recovery}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="tel:+918602420313"
@@ -132,9 +124,7 @@ function ServicePage() {
 
         {service.faqs.length > 0 && (
           <section className="container-x mt-20">
-            <h2 className="font-display text-2xl font-semibold text-primary">
-              Common questions
-            </h2>
+            <h2 className="font-display text-2xl font-semibold text-primary">Common questions</h2>
             <div className="mt-6 divide-y divide-border">
               {service.faqs.map((f: ServiceDetail["faqs"][number]) => (
                 <div key={f.q} className="py-5">
